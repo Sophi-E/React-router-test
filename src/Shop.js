@@ -1,10 +1,26 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 
-const shop = () => {
+const Shop = () => {
+  useEffect(() => {
+    fetchItems();
+  }, []);
+
+  const [items, setItems] = useState([]);
+
+  const fetchItems = async () => {
+    const data = await fetch(
+      "https://fortnite-api.theapinetwork.com/upcoming/get"
+    );
+    const item = await data.json();
+    console.log(item);
+    setItems(item);
+  };
   return (
     <div>
-      <h1> hi from the shop page</h1>
+      {item.map(item => (
+        <h1>{item.name} </h1>
+      ))}
     </div>
   );
 };
-export default shop;
+export default Shop;

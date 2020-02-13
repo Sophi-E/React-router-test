@@ -11,7 +11,7 @@ export default function App() {
   return (
     <Router>
       <div className="App">
-        <h1>Protected Routing</h1>
+        <h1>Id routing</h1>
         <Nav />
         <Switch>
           <Route path="/" exact component={LandingPage} />

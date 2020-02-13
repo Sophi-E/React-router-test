@@ -16,6 +16,7 @@ const Shop = () => {
     const items = await data.json();
 
     setItems(items);
+    console.log(items);
   };
   return (
     <div>

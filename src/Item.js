@@ -1,12 +1,11 @@
 import React, { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
 
 const Item = ({ match }) => {
   useEffect(() => {
     fetchItem();
   }, []);
 
-  const [item, setItem] = useState([]);
+  const [item, setItem] = useState({});
 
   const fetchItem = async () => {
     const data = await fetch(
@@ -15,6 +14,7 @@ const Item = ({ match }) => {
     const item = await data.json();
 
     setItem(item);
+    console.log(item);
   };
   return (
     <div>

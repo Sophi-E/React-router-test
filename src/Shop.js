@@ -1,4 +1,6 @@
 import React, { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
+import Item from "./Item";
 
 const Shop = () => {
   useEffect(() => {
@@ -9,16 +11,18 @@ const Shop = () => {
 
   const fetchItems = async () => {
     const data = await fetch(
-      "https://fortnite-api.theapinetwork.com/upcoming/get"
+      "https://jsonplaceholder.typicode.com/photos?_limit=10"
     );
-    const item = await data.json();
-    console.log(item);
-    setItems(item);
+    const items = await data.json();
+
+    setItems(items);
   };
   return (
     <div>
-      {item.map(item => (
-        <h1>{item.name} </h1>
+      {items.map(item => (
+        <h4 key={item.id}>
+          <Link to={`/shop/${item.id}`}>{item.title}</Link>
+        </h4>
       ))}
     </div>
   );

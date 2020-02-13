@@ -16,9 +16,6 @@ const Nav = () => {
         <Link style={linkStyle} to="/shop">
           <li>Shop</li>
         </Link>
-        <Link style={linkStyle} to="/item">
-          <li>Item</li>
-        </Link>
       </ul>
     </nav>
   );

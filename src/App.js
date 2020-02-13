@@ -16,8 +16,8 @@ export default function App() {
         <Switch>
           <Route path="/" exact component={LandingPage} />
           <Route path="/about" component={About} />
-          <Route path="/shop" component={Shop} />
-          <Route path="/item" component={Item} />
+          <Route path="/shop" exact component={Shop} />
+          <Route path="/shop/:id" component={Item} />
         </Switch>
       </div>
     </Router>
